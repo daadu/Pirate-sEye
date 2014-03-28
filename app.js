@@ -24,9 +24,12 @@ function windowLoaded(){
 	}
 	function videoClicked(){
 		context.drawImage(video,0,0);
+		var link = document.createElement("a");
 		var img = new Image();
 		img.onload = function(){
-			imglist.appendChild(img);
+			link.href = img.src;
+			link.appendChild(img)
+			imglist.appendChild(link);
 		};
 		img.src = canvas.toDataURL();
 	}

@@ -41,7 +41,10 @@ h2{
 	border: dashed 2px;
 }
 #imglist img:hover{
-	border: :solid 2px;
+	margin-left: 25px;
+	border: solid 2px;
+	width: 250px;
+	height: 200px;
 }
 video{
 	border: dashed 3px;
