@@ -20,7 +20,7 @@ function windowLoaded(){
 		video.addEventListener("click",videoClicked,false)
 	}
 	function camfeed(userMedia){
-		video.src = window.URL.createObjectURL(userMedia);
+		video.srcObject = userMedia;
 	}
 	function videoClicked(){
 		context.drawImage(video,0,0);
