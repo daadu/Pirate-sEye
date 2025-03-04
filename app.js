@@ -21,6 +21,9 @@ function windowLoaded(){
 	}
 	function camfeed(userMedia){
 		video.srcObject = userMedia;
+		video.style.transform = "scaleX(-1)";
+    	video.style.webkitTransform = "scaleX(-1)"; // For older browsers
+    	video.style.mozTransform = "scaleX(-1)"; // For Firefox
 	}
 	function videoClicked(){
 		context.drawImage(video,0,0);
