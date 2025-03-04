@@ -16,7 +16,7 @@ function windowLoaded(){
 	}
 
 	function init(){
-		navigator.getUserMedia({video: true, audio:true}, camfeed, fail);
+		navigator.getUserMedia({video: true, audio: false}, camfeed, fail);
 		video.addEventListener("click",videoClicked,false)
 	}
 	function camfeed(userMedia){
