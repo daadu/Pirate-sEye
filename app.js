@@ -26,12 +26,21 @@ function windowLoaded(){
     	video.style.mozTransform = "scaleX(-1)"; // For Firefox
 	}
 	function videoClicked(){
-		context.drawImage(video,0,0);
+		// Flip the canvas context
+		context.save(); // Save current context state
+		context.translate(canvas.width, 0); // Move context to the right
+		context.scale(-1, 1); // Mirror horizontally
+		// Draw the video frame
+		context.drawImage(video, 0, 0, canvas.width, canvas.height);
+		// Restore the context to avoid affecting future drawings
+		context.restore();
+
+		// Convert canvas to image
 		var link = document.createElement("a");
 		var img = new Image();
-		img.onload = function(){
+		img.onload = function() {
 			link.href = img.src;
-			link.appendChild(img)
+			link.appendChild(img);
 			imglist.appendChild(link);
 		};
 		img.src = canvas.toDataURL();
